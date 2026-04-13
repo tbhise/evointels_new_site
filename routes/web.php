@@ -1,16 +1,21 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+
+
+Route::get('/reports/{industry?}', [ReportController::class, 'index']);
+
+
+
 Route::get('/services', function () {
     return view('services');
 });
-Route::get('/reports/{industry?}', function () {
-    return view('reports');
-});
+
 Route::get('/contact', function () {
     return view('contact');
 });

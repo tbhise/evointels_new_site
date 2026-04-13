@@ -14,7 +14,7 @@
                     <aside class="reports-sidebar">
                         <div class="sidebar-box">
                             <h3>Industries</h3>
-                            <nav aria-label="Industry categories" id="industry-nav">
+                            {{-- <nav aria-label="Industry categories" id="industry-nav">
                                 <a href="{{ url('/reports') }}?industry=healthcare" data-industry="healthcare"
                                     class="active">Healthcare <span class="count">(12)</span></a>
                                 <a href="{{ url('/reports') }}?industry=technology" data-industry="technology">Technology
@@ -33,7 +33,20 @@
                                         class="count">(6)</span></a>
                                 <a href="{{ url('/reports') }}?industry=chemicals" data-industry="chemicals">Chemicals <span
                                         class="count">(5)</span></a>
+                            </nav> --}}
+
+                            <nav aria-label="Industry categories" id="industry-nav">
+                                @foreach ($industries as $industry)
+                                    <a {{-- href="{{ url('/report/' . $industry->slug) }}" --}} href="{{ url('/reports') }}?industry={{ $industry->slug }}"
+                                        data-industry="{{ $industry->slug }}">{{ $industry->name }}
+                                        <span class="count">(0)</span></a>
+                                @endforeach
                             </nav>
+
+
+
+
+
                         </div>
                     </aside>
                     <div class="reports-main">

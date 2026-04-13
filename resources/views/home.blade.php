@@ -13,8 +13,8 @@
                             AI-powered
                             intelligence across 50+ industries worldwide.</p>
                         <div class="hero-buttons">
-                            <a href="{{url('/reports')}}" class="btn-primary-lg">Explore Reports →</a>
-                            <a href="contact.html" class="btn-ghost-lg">Request Consultation</a>
+                            <a href="{{ url('/reports') }}" class="btn-primary-lg">Explore Reports →</a>
+                            <a href="{{ url('/contact') }}" class="btn-ghost-lg">Request Consultation</a>
                         </div>
                     </div>
                     <div class="hero-visual">
@@ -110,55 +110,55 @@
                     <h2>Deep Expertise Across Sectors</h2>
                 </div>
                 <div class="industry-grid">
-                    <a href="{{url('/reports')}}?industry=healthcare" class="industry-card"><span class="emoji"><i
+                    <a href="{{ url('/reports') }}?industry=healthcare" class="industry-card"><span class="emoji"><i
                                 class="fas fa-hospital"></i></span>
                         <div>
                             <h4>Healthcare</h4>
                             <p class="count">18,000+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=technology" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=technology" class="industry-card"><span class="emoji"><i
                                 class="fas fa-satellite-dish"></i></span>
                         <div>
                             <h4>ICT & Telecom</h4>
                             <p class="count">22,000+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=energy" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=energy" class="industry-card"><span class="emoji"><i
                                 class="fas fa-bolt"></i></span>
                         <div>
                             <h4>Energy & Power</h4>
                             <p class="count">14,000+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=semiconductor" class="industry-card"><span class="emoji"><i
-                                class="fas fa-microchip"></i></span>
+                    </a><a href="{{ url('/reports') }}?industry=semiconductor" class="industry-card"><span
+                            class="emoji"><i class="fas fa-microchip"></i></span>
                         <div>
                             <h4>Semiconductor</h4>
                             <p class="count">9,500+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=automotive" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=automotive" class="industry-card"><span class="emoji"><i
                                 class="fas fa-car"></i></span>
                         <div>
                             <h4>Automotive</h4>
                             <p class="count">11,000+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=chemicals" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=chemicals" class="industry-card"><span class="emoji"><i
                                 class="fas fa-flask"></i></span>
                         <div>
                             <h4>Chemicals</h4>
                             <p class="count">8,200+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=consumer-goods" class="industry-card"><span class="emoji"><i
-                                class="fas fa-shopping-cart"></i></span>
+                    </a><a href="{{ url('/reports') }}?industry=consumer-goods" class="industry-card"><span
+                            class="emoji"><i class="fas fa-shopping-cart"></i></span>
                         <div>
                             <h4>FMCG</h4>
                             <p class="count">12,500+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=bfsi" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=bfsi" class="industry-card"><span class="emoji"><i
                                 class="fas fa-landmark"></i></span>
                         <div>
                             <h4>BFSI</h4>
                             <p class="count">15,000+ Reports</p>
                         </div>
-                    </a><a href="{{url('/reports')}}?industry=aerospace" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports') }}?industry=aerospace" class="industry-card"><span class="emoji"><i
                                 class="fas fa-plane"></i></span>
                         <div>
                             <h4>Aerospace</h4>
@@ -180,84 +180,52 @@
                     <button class="tab-btn" onclick="showTab(this,'trending')">Trending Reports</button>
                 </div>
                 <div class="reports-grid" id="latest">
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">Healthcare</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i> +12.4%</span></div>
-                        <h3>Global Telemedicine Market Analysis 2026-2032</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 15, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">ICT</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i>
-                                +18.7%</span></div>
-                        <h3>Artificial Intelligence in Enterprise: Trends & Forecast</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 12, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">Energy</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i>
-                                +9.2%</span></div>
-                        <h3>Renewable Energy Storage Solutions Market Report</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 10, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">Semiconductor</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i> +22.1%</span></div>
-                        <h3>Advanced Chip Manufacturing: Global Outlook 2026</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 8, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
+
+                    @foreach ($latestReports as $report)
+                        <div class="report-card">
+                            <div class="top">
+                                <span class="badge-sm">{{ $report->industry_name }}</span>
+                                <span class="growth">
+                                    <i class="fas fa-chart-line"></i> +{{ $report->growth_rate }}</span>
+                            </div>
+                            <h3>{{ $report->name }}</h3>
+                            <div class="date">
+                                <i class="fas fa-calendar-alt"></i> {{ date('M d, Y', strtotime($report->created_at)) }}
+                            </div>
+                            <div class="actions">
+                                <a href="{{ url('/') }}/{{ $report->slug }}" class="text-link">Read More
+                                    →</a>
+                                <a href="{{ url('/') }}/{{ $report->slug }}" class="btn-primary"
+                                    style="font-size:13px;padding:6px 16px">
+                                    <i class="fas fa-shopping-cart"></i> Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
                 <div class="reports-grid" id="trending" style="display:none">
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">Automotive</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i> +15.3%</span></div>
-                        <h3>Electric Vehicle Battery Technology Market 2026</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 14, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">FMCG</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i>
-                                +8.6%</span></div>
-                        <h3>Sustainable Packaging Market: Global Trends</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 11, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">BFSI</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i>
-                                +11.9%</span></div>
-                        <h3>Digital Banking Transformation Report 2026</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 9, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
-                    <div class="report-card">
-                        <div class="top"><span class="badge-sm">Aerospace</span><span class="growth"><i
-                                    class="fas fa-chart-line"></i> +14.5%</span></div>
-                        <h3>Space Technology & Satellite Market Analysis</h3>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> Mar 7, 2026</div>
-                        <div class="actions"><a href="report-detail.html" class="text-link">Read More →</a><a
-                                href="report-detail.html" class="btn-primary" style="font-size:13px;padding:6px 16px"><i
-                                    class="fas fa-shopping-cart"></i> Buy Now</a></div>
-                    </div>
+                   @foreach ($trendingReports as $report)
+                        <div class="report-card">
+                            <div class="top">
+                                <span class="badge-sm">{{ $report->industry_name }}</span>
+                                <span class="growth">
+                                    <i class="fas fa-chart-line"></i> +{{ $report->growth_rate }}</span>
+                            </div>
+                            <h3>{{ $report->name }}</h3>
+                            <div class="date">
+                                <i class="fas fa-calendar-alt"></i> {{ date('M d, Y', strtotime($report->created_at)) }}
+                            </div>
+                            <div class="actions">
+                                <a href="{{ url('/') }}/{{ $report->slug }}" class="text-link">Read More
+                                    →</a>
+                                <a href="{{ url('/') }}/{{ $report->slug }}" class="btn-primary"
+                                    style="font-size:13px;padding:6px 16px">
+                                    <i class="fas fa-shopping-cart"></i> Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -274,26 +242,26 @@
                         <h3>Market Research</h3>
                         <p>Comprehensive market sizing, segmentation, and growth forecasting to identify untapped
                             opportunities.</p>
-                        <a href="services.html" class="text-link">Learn More →</a>
+                        <a href="{{ url('/services') }}" class="text-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-bullseye"></i></div>
                         <h3>Competitive Intelligence</h3>
                         <p>Deep-dive analysis of competitive landscapes, benchmarking, and strategic positioning insights.
-                        </p><a href="services.html" class="text-link">Learn More →</a>
+                        </p><a href="{{ url('/services') }}" class="text-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-chart-line"></i></div>
                         <h3>Industry Analysis</h3>
                         <p>Sector-specific research covering trends, regulations, and market dynamics across 50+ industries.
-                        </p><a href="services.html" class="text-link">Learn More →</a>
+                        </p><a href="{{ url('/services') }}" class="text-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-file-alt"></i></div>
                         <h3>Custom Reports</h3>
                         <p>Tailored research solutions designed to address your specific business questions and strategic
                             goals.</p>
-                        <a href="services.html" class="text-link">Learn More →</a>
+                        <a href="{{ url('/services') }}" class="text-link">Learn More →</a>
                     </div>
                 </div>
             </div>
