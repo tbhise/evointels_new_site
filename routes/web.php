@@ -10,7 +10,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/reports/{industry?}', [ReportController::class, 'index']);
 
-
+Route::get('/fetchReports', [ReportController::class, 'fetchReports']);
 
 Route::get('/services', function () {
     return view('services');

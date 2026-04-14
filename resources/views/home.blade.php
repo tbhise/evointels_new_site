@@ -110,55 +110,55 @@
                     <h2>Deep Expertise Across Sectors</h2>
                 </div>
                 <div class="industry-grid">
-                    <a href="{{ url('/reports') }}?industry=healthcare" class="industry-card"><span class="emoji"><i
+                    <a href="{{ url('/reports/healthcare') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-hospital"></i></span>
                         <div>
                             <h4>Healthcare</h4>
                             <p class="count">18,000+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=technology" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/technology') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-satellite-dish"></i></span>
                         <div>
                             <h4>ICT & Telecom</h4>
                             <p class="count">22,000+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=energy" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/energy') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-bolt"></i></span>
                         <div>
                             <h4>Energy & Power</h4>
                             <p class="count">14,000+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=semiconductor" class="industry-card"><span
+                    </a><a href="{{ url('/reports/semiconductor') }}" class="industry-card"><span
                             class="emoji"><i class="fas fa-microchip"></i></span>
                         <div>
                             <h4>Semiconductor</h4>
                             <p class="count">9,500+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=automotive" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/automotive') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-car"></i></span>
                         <div>
                             <h4>Automotive</h4>
                             <p class="count">11,000+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=chemicals" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/chemicals') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-flask"></i></span>
                         <div>
                             <h4>Chemicals</h4>
                             <p class="count">8,200+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=consumer-goods" class="industry-card"><span
+                    </a><a href="{{ url('/reports/consumer-goods') }}" class="industry-card"><span
                             class="emoji"><i class="fas fa-shopping-cart"></i></span>
                         <div>
                             <h4>FMCG</h4>
                             <p class="count">12,500+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=bfsi" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/bfsi') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-landmark"></i></span>
                         <div>
                             <h4>BFSI</h4>
                             <p class="count">15,000+ Reports</p>
                         </div>
-                    </a><a href="{{ url('/reports') }}?industry=aerospace" class="industry-card"><span class="emoji"><i
+                    </a><a href="{{ url('/reports/aerospace') }}" class="industry-card"><span class="emoji"><i
                                 class="fas fa-plane"></i></span>
                         <div>
                             <h4>Aerospace</h4>

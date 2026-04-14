@@ -371,10 +371,10 @@ $(function () {
             "Showing " + slice.length + " of " + total + " reports in " + name,
         );
 
-        $("#industry-nav a").removeClass("active");
-        $('#industry-nav a[data-industry="' + currentIndustry + '"]').addClass(
-            "active",
-        );
+        // $("#industry-nav a").removeClass("active");
+        // $('#industry-nav a[data-industry="' + currentIndustry + '"]').addClass(
+        //     "active",
+        // );
 
         var html = "";
         $.each(slice, function (i, r) {
@@ -436,19 +436,19 @@ $(function () {
 
     window.goPage = function (p) {
         currentPage = p;
-        renderReports();
+        // renderReports();
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    $("#industry-nav a").on("click", function (e) {
-        e.preventDefault();
-        currentIndustry = $(this).data("industry");
-        currentPage = 1;
-        renderReports();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    // $("#industry-nav a").on("click", function (e) {
+    //     e.preventDefault();
+    //    // currentIndustry = $(this).data("industry");
+    //    // currentPage = 1;
+    //  //   renderReports();
+    //     window.scrollTo({ top: 0, behavior: "smooth" });
+    // });
 
-    if ($("#reports-container").length) renderReports();
+    // if ($("#reports-container").length) renderReports();
 
     // ── Fade-up on scroll (IntersectionObserver) ──
     if ("IntersectionObserver" in window) {

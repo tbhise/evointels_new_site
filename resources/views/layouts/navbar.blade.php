@@ -28,77 +28,77 @@
 
 
 
-                                  <a href="{{ url('/reports') }}?industry=healthcare" class="dropdown-item">
+                                  <a href="{{ url('/reports/healthcare') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-hospital"></i></div>
                                       <div>
                                           <h4>Healthcare</h4>
                                           <p>Pharmaceuticals, medical devices, biotechnology</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=technology" class="dropdown-item">
+                                  <a href="{{ url('/reports/information-communications-technology') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-laptop-code"></i></div>
                                       <div>
                                           <h4>Technology</h4>
                                           <p>AI, SaaS, cloud computing</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=automotive" class="dropdown-item">
+                                  <a href="{{ url('/reports/automotive-transportation') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-car"></i></div>
                                       <div>
                                           <h4>Automotive</h4>
                                           <p>EV, mobility, logistics</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=bfsi" class="dropdown-item">
+                                  <a href="{{ url('/reports/bfsi') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-landmark"></i></div>
                                       <div>
                                           <h4>BFSI</h4>
                                           <p>Banking, insurance, fintech</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=energy" class="dropdown-item">
+                                  <a href="{{ url('/reports/energy-power') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-bolt"></i></div>
                                       <div>
                                           <h4>Energy</h4>
                                           <p>Oil, gas, renewable energy</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=consumer-goods" class="dropdown-item">
+                                  <a href="{{ url('/reports/consumer-goods') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fas fa-shopping-cart"></i></div>
                                       <div>
                                           <h4>Consumer Goods</h4>
                                           <p>FMCG, retail, e-commerce</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=aerospace-defense" class="dropdown-item">
+                                  <a href="{{ url('/reports/aerospace-defence') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fa fa-plane"></i></div>
                                       <div>
                                           <h4>Aerospace & Defense</h4>
                                           <p>Aircraft, defense systems, UAVs and space</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=agriculture-food" class="dropdown-item">
+                                  <a href="{{ url('/reports/agriculture-food') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fa fa-bowl-food"></i></div>
                                       <div>
                                           <h4>Agriculture</h4>
                                           <p>Agriculture, agri-tech, fertilizers</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=food-beverage" class="dropdown-item">
+                                  <a href="{{ url('/reports/food-beverage') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fa fa-bottle-water"></i></div>
                                       <div>
                                           <h4>Food & Beverage</h4>
                                           <p>Processed food, beverages and ingredients</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=chemicals-materials" class="dropdown-item">
+                                  <a href="{{ url('/reports/chemicals-materials') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fa fa-flask-vial"></i></div>
                                       <div>
                                           <h4>Chemicals & Materials</h4>
                                           <p>Specialty chemicals, polymers and materials</p>
                                       </div>
                                   </a>
-                                  <a href="{{ url('/reports') }}?industry=semiconductor-electronics" class="dropdown-item">
+                                  <a href="{{ url('/reports/semiconductor-electronics') }}" class="dropdown-item">
                                       <div class="icon-wrap"><i class="fa fa-microchip"></i></div>
                                       <div>
                                           <h4>Semiconductor & Electronics</h4>

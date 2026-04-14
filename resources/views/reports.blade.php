@@ -14,31 +14,14 @@
                     <aside class="reports-sidebar">
                         <div class="sidebar-box">
                             <h3>Industries</h3>
-                            {{-- <nav aria-label="Industry categories" id="industry-nav">
-                                <a href="{{ url('/reports') }}?industry=healthcare" data-industry="healthcare"
-                                    class="active">Healthcare <span class="count">(12)</span></a>
-                                <a href="{{ url('/reports') }}?industry=technology" data-industry="technology">Technology
-                                    <span class="count">(15)</span></a>
-                                <a href="{{ url('/reports') }}?industry=automotive" data-industry="automotive">Automotive
-                                    <span class="count">(9)</span></a>
-                                <a href="{{ url('/reports') }}?industry=energy" data-industry="energy">Energy <span
-                                        class="count">(11)</span></a>
-                                <a href="{{ url('/reports') }}?industry=bfsi" data-industry="bfsi">BFSI <span
-                                        class="count">(8)</span></a>
-                                <a href="{{ url('/reports') }}?industry=consumer-goods"
-                                    data-industry="consumer-goods">Consumer Goods <span class="count">(7)</span></a>
-                                <a href="{{ url('/reports') }}?industry=semiconductor"
-                                    data-industry="semiconductor">Semiconductor <span class="count">(10)</span></a>
-                                <a href="{{ url('/reports') }}?industry=aerospace" data-industry="aerospace">Aerospace <span
-                                        class="count">(6)</span></a>
-                                <a href="{{ url('/reports') }}?industry=chemicals" data-industry="chemicals">Chemicals <span
-                                        class="count">(5)</span></a>
-                            </nav> --}}
+
 
                             <nav aria-label="Industry categories" id="industry-nav">
                                 @foreach ($industries as $industry)
-                                    <a {{-- href="{{ url('/report/' . $industry->slug) }}" --}} href="{{ url('/reports') }}?industry={{ $industry->slug }}"
-                                        data-industry="{{ $industry->slug }}">{{ $industry->name }}
+                                    <a href="{{ url('/reports') }}/{{ $industry->slug }}"
+                                        class="{{ request()->is('reports/' . $industry->slug) ? 'active' : '' }}"
+                                        data-industry="{{ $industry->id }}"
+                                        data-slug="{{ $industry->slug }}">{{ $industry->name }}
                                         <span class="count">(0)</span></a>
                                 @endforeach
                             </nav>
@@ -59,4 +42,8 @@
             </div>
         </section>
     </main>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/js/reports.js') }}"></script>
 @endsection
