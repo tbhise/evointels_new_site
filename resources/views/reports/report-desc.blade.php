@@ -48,33 +48,18 @@
                         <div class="tab-content">
                             <div class="tab-panel active" id="panel-desc">
                                 <h2 style="font-size:20px;font-weight:700;margin-bottom:16px">Market Overview</h2>
-                                <p style="color:var(--muted);line-height:1.7;margin-bottom:20px">
+                                <p style="color:var(--muted);line-height:1.7;margin-bottom:20px;font-size:14px">
                                     {{ $report_desc->market_analysis }}</p>
 
-                                <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px">Key Market Drivers</h3>
+                                @if (!empty($report_desc->market_drivers))
+                                    <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px">Key Market Drivers</h3>
+                                    <ul class="check-list">
+                                        @foreach (json_decode($report_desc->market_drivers) as $key=>$value)
+                                            <li>{{ $value->text }}</li>
 
-
-                                <ul class="check-list">
-                                    {{-- <li>Growing demand for advanced solutions across emerging economies</li>
-                                    <li>Increasing regulatory mandates requiring compliance with international standards
-                                    </li>
-                                    <li>Technological advancements enabling cost-effective manufacturing</li>
-                                    <li>Rising investment from venture capital accelerating innovation</li> --}}
-
-                                    @dd($report_desc->market_drivers)
-                                    @forelse ($report_desc->market_drivers as $key=>$value)
-                                        <li>{{ $value }}</li>
-                                    @empty
-                                        <li></li>
-                                    @endforelse
-
-
-
-
-
-
-                                </ul>
-
+                                        @endforeach
+                                    </ul>
+                                @endif
 
 
                                 <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px">Regional Analysis</h3>
@@ -248,60 +233,6 @@
                 </div>
             </div>
         </section>
-        <section class="section fade-up" style="padding-top:0">
-            <div class="container">
-                <h2 style="font-size:24px;font-weight:800;margin-bottom:24px">Related Reports</h2>
-                <div class="related-grid">
-                    <div class="card">
-                        <div class="card-body">
-                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                                <span class="badge-sm">Healthcare</span><span style="font-size:12px;color:var(--muted)"><i
-                                        class="fas fa-calendar-alt"></i> Mar 10, 2026</span>
-                            </div>
-                            <h3 style="font-size:16px;font-weight:700;margin-bottom:8px">Pharmaceutical Drug Delivery
-                                Systems Market
-                                Report</h3>
-                            <p style="font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:12px"
-                                class="line-clamp-2">
-                                In-depth evaluation of advanced drug delivery mechanisms.</p>
-                            <div style="display:flex;align-items:center;gap:12px"><span class="price">$3,299</span><a
-                                    href="report-detail.html" class="text-link">View Report →</a></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                                <span class="badge-sm">Healthcare</span><span style="font-size:12px;color:var(--muted)"><i
-                                        class="fas fa-calendar-alt"></i> Mar 5, 2026</span>
-                            </div>
-                            <h3 style="font-size:16px;font-weight:700;margin-bottom:8px">Wearable Medical Devices Market
-                                Outlook 2026
-                            </h3>
-                            <p style="font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:12px"
-                                class="line-clamp-2">
-                                Market assessment of wearable health monitors.</p>
-                            <div style="display:flex;align-items:center;gap:12px"><span class="price">$2,999</span><a
-                                    href="report-detail.html" class="text-link">View Report →</a></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                                <span class="badge-sm">Healthcare</span><span style="font-size:12px;color:var(--muted)"><i
-                                        class="fas fa-calendar-alt"></i> Feb 28, 2026</span>
-                            </div>
-                            <h3 style="font-size:16px;font-weight:700;margin-bottom:8px">Digital Health Platforms Market
-                                Intelligence
-                                Report</h3>
-                            <p style="font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:12px"
-                                class="line-clamp-2">
-                                Strategic analysis of digital health ecosystems.</p>
-                            <div style="display:flex;align-items:center;gap:12px"><span class="price">$3,199</span><a
-                                    href="report-detail.html" class="text-link">View Report →</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
     </main>
 @endsection
