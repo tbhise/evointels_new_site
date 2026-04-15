@@ -1,55 +1,78 @@
-$(document).ready(function () {
-    $("#industry-nav a").on("click", function (e) {
-        e.preventDefault();
-        $("#industry-nav a").removeClass("active");
-        $(this).addClass("active");
-
-        var industryId = $(this).data("industry");
-
-        var slug = $(this).data("slug");
-        // ✅ Update URL without reload
-        if (slug) {
-            var newUrl = baseUrl + "/reports/" + slug;
-            window.history.pushState({ path: newUrl }, "", newUrl);
+$(function () {
+    let currentIndustryId = null;
+    // 🔹 Core loader (single source of truth)
+    function loadReports({
+        industryId = currentIndustryId,
+        page = 1,
+        updateUrl = false,
+        slug = null,
+    } = {}) {
+        if (!industryId) return;
+        currentIndustryId = industryId;
+        // Update URL (only when switching tabs)
+        if (updateUrl && slug) {
+            const newUrl = baseUrl + "/reports/" + slug;
+            window.history.pushState({ industryId, page }, "", newUrl);
         }
-
         $.ajax({
             url: baseUrl + "/fetchReports",
             method: "GET",
             data: {
                 industry_id: industryId,
+                page: page,
+            },
+            beforeSend: function () {
+                $("#reports-container").addClass("loading"); // optional loader class
             },
             success: function (data) {
                 $("#reports-container").html(data);
+                window.scrollTo({ top: 0, behavior: "smooth" });
             },
             error: function () {
-                console.log("Failed to load reports. Please try again.");
+                console.error("Failed to load reports.");
+            },
+            complete: function () {
+                $("#reports-container").removeClass("loading");
             },
         });
+    }
+    // 🔹 Industry Tab Click
+    $(document).on("click", "#industry-nav a", function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        const industryId = $this.data("industry");
+        const slug = $this.data("slug");
+        if (!industryId) return;
+        $("#industry-nav a").removeClass("active");
+        $this.addClass("active");
+        loadReports({
+            industryId,
+            page: 1,
+            updateUrl: true,
+            slug,
+        });
     });
-
-    $("#industry-nav a.active").trigger("click");
-
-
-
-
-
+    // 🔹 Pagination Click
     $(document).on("click", ".page-link", function () {
-    if ($(this).attr("disabled")) return;
-
-    let page = $(this).data("page");
-    let industryId = $("#industry-nav a.active").data("industry");
-
-    $.ajax({
-        url: baseUrl + "/fetchReports",
-        method: "GET",
-        data: {
-            industry_id: industryId,
-            page: page, // Laravel understands this internally
-        },
-        success: function (data) {
-            $("#reports-container").html(data);
-        },
+        if ($(this).is("[disabled]")) return;
+        const page = $(this).data("page");
+        loadReports({ page });
     });
-});
+    // 🔹 Initial Load
+    const $activeTab = $("#industry-nav a.active").first();
+    if ($activeTab.length) {
+        loadReports({
+            industryId: $activeTab.data("industry"),
+            page: 1,
+        });
+    }
+    // 🔹 Handle Browser Back/Forward (optional but powerful)
+    window.onpopstate = function (event) {
+        if (event.state) {
+            loadReports({
+                industryId: event.state.industryId,
+                page: event.state.page,
+            });
+        }
+    };
 });
