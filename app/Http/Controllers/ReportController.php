@@ -21,7 +21,7 @@ class ReportController extends Controller
         $industryId = $request->industry_id;
 
         $reports = DB::table('report_master')
-            ->select('report_master.id', 'industries_master.name as industry_name', 'report_master.name', 'report_master.summary', 'report_master.base_year', 'report_master.base_year', 'report_master.forecast_year', 'report_master.slug', 'report_master.created_at', 'report_master.growth_rate', 'report_master.forecast_year_value', 'sub_industries_master.name as sub_i_name')
+            ->select('report_master.id', 'industries_master.name as industry_name', 'report_master.name', 'report_master.summary', 'report_master.base_year', 'report_master.base_year', 'report_master.forecast_year', 'report_master.slug', 'report_master.created_at', 'report_master.growth_rate', 'report_master.forecast_year_value', 'report_master.base_year_value', 'sub_industries_master.name as sub_i_name')
             ->leftJoin('industries_master', 'industries_master.id', '=', 'report_master.industry_id')
             ->leftJoin('sub_industries_master', 'sub_industries_master.id', '=', 'report_master.sub_industry_id')
             ->where('report_master.industry_id', $industryId)

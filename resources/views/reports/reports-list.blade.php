@@ -1,19 +1,15 @@
 @forelse ($reports as $report)
     <article class="rp-report-card">
-        <div class="rp-report-left">
-            <div class="rp-report-icon">
-                <i class="fas fa-file-chart-line" aria-hidden="true"></i>
-            </div>
-        </div>
+
         <div class="rp-report-body">
             <!-- Tags -->
             <div class="rp-report-tags">
                 <span class="rp-tag-industry">
                     {{ $report->industry_name }}
                 </span>
-                <span class="rp-tag-industry">
+                {{-- <span class="rp-tag-industry">
                     {{ $report->sub_i_name }}
-                </span>
+                </span> --}}
                 <span class="rp-tag-cagr">
                     <i class="fas fa-arrow-trend-up"></i>
                     {{ $report->growth_rate }} CAGR
@@ -31,40 +27,48 @@
             </p> --}}
             <!-- Meta -->
             <div class="rp-report-meta">
-                <div class="rp-meta-item">
-                    <span class="rp-meta-label">Market Size</span>
-                    <span class="rp-meta-value">{{ $report->forecast_year_value }}</span>
-                </div>
-                <div class="rp-meta-item">
-                    <span class="rp-meta-label">Forecast</span>
-                    <span class="rp-meta-value">{{ $report->forecast_year_value }}</span>
-                </div>
-                <div class="rp-meta-item">
-                    <span class="rp-meta-label">Period</span>
-                    <span class="rp-meta-value">{{ $report->forecast_year }}</span>
-                </div>
+
+                <span class="rp-tag-md">
+                    <i class="fas fa-dollar-sign"></i> Market Size : <span
+                        class="fw-semibold">{{ $report->base_year_value }}</span>
+                </span>
+                <span class="rp-tag-md">
+                    <i class="fas fa-chart-line"></i> Forecast Size : <span
+                        class="fw-semibold">{{ $report->forecast_year_value }}</span>
+                </span>
+                <span class="rp-tag-md">
+                    <i class="fa fa-calendar"></i> Forecast : <span class="fw-semibold">{{ $report->base_year }} -
+                        {{ $report->forecast_year }}</span>
+                </span>
+
             </div>
             <!-- Details -->
             <div class="rp-report-details">
                 <div class="rp-detail-row">
                     <i class="fas fa-globe" aria-hidden="true"></i>
-                    <span>-</span>
+                    Regions Covered : <span>-</span>
                 </div>
                 <div class="rp-detail-row">
                     <i class="fas fa-building" aria-hidden="true"></i>
-                    <span>-</span>
+                    Major Players : <span>-</span>
+                </div>
+                <div class="rp-detail-row">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    Published : <span>{{ \Carbon\Carbon::parse($report->created_at)->format('M, Y') }}</span>
                 </div>
             </div>
+
+
             <!-- Footer -->
             <div class="rp-report-footer">
                 <span class="rp-report-price">
                     $3499
                 </span>
                 <div class="rp-report-actions">
-                    <a href="{{ url('report-detail', ['id' => $report->id]) }}" class="btn-primary rp-btn">
+                    <a href="{{ url($report->slug) }}" class="btn-primary rp-btn">
                         <i class="fas fa-shopping-cart"></i> Buy Now
                     </a>
-                    <a href="{{ url('report-detail', ['id' => $report->id]) }}" class="rp-read-more">
+                    <a href="{{ url($report->slug) }}" class="rp-read-more">
                         Read More <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
