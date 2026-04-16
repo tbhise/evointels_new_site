@@ -26,7 +26,7 @@ $(function () {
             },
             success: function (data) {
                 $("#reports-container").html(data);
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                // window.scrollTo({ top: 0, behavior: "smooth" });
             },
             error: function () {
                 console.error("Failed to load reports.");
@@ -37,21 +37,22 @@ $(function () {
         });
     }
     // 🔹 Industry Tab Click
-    $(document).on("click", "#industry-nav a", function (e) {
-        e.preventDefault();
-        const $this = $(this);
-        const industryId = $this.data("industry");
-        const slug = $this.data("slug");
-        if (!industryId) return;
-        $("#industry-nav a").removeClass("active");
-        $this.addClass("active");
-        loadReports({
-            industryId,
-            page: 1,
-            updateUrl: true,
-            slug,
-        });
-    });
+    // $(document).on("click", "#industrySidebarNav a", function (e) {
+    //     e.preventDefault();
+    //     const $this = $(this);
+    //     const industryId = $this.data("industry");
+    //     const slug = $this.data("slug");
+    //     if (!industryId) return;
+    //     $("#industrySidebarNav a").removeClass("rp-nav-active");
+    //     $this.addClass("rp-nav-active");
+    //     loadReports({
+    //         industryId,
+    //         page: 1,
+    //         updateUrl: true,
+    //         slug,
+    //     });
+    // });
+    
     // 🔹 Pagination Click
     $(document).on("click", ".page-link", function () {
         if ($(this).is("[disabled]")) return;
@@ -59,7 +60,7 @@ $(function () {
         loadReports({ page });
     });
     // 🔹 Initial Load
-    const $activeTab = $("#industry-nav a.active").first();
+    const $activeTab = $("#industrySidebarNav a.rp-nav-active").first();
     if ($activeTab.length) {
         loadReports({
             industryId: $activeTab.data("industry"),

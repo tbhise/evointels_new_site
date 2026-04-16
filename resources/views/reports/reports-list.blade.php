@@ -1,42 +1,73 @@
 @forelse ($reports as $report)
-    <article class="report-list-card">
-        <div class="thumb">
-            <i class="fas fa-file-alt" style="font-size:48px"></i>
+    <article class="rp-report-card">
+        <div class="rp-report-left">
+            <div class="rp-report-icon">
+                <i class="fas fa-file-chart-line" aria-hidden="true"></i>
+            </div>
         </div>
-        <div class="content">
-            <div class="top">
-                <span class="badge-sm">
+        <div class="rp-report-body">
+            <!-- Tags -->
+            <div class="rp-report-tags">
+                <span class="rp-tag-industry">
                     {{ $report->industry_name }}
                 </span>
-                <span style="font-size:12px;color:var(--muted)">
-                    <i class="fas fa-calendar-alt"></i>
-                    {{ \Carbon\Carbon::parse($report->created_at)->format('M d, Y') }}
+                <span class="rp-tag-industry">
+                    {{ $report->sub_i_name }}
+                </span>
+                <span class="rp-tag-cagr">
+                    <i class="fas fa-arrow-trend-up"></i>
+                    {{ $report->growth_rate }} CAGR
                 </span>
             </div>
+            <!-- Title -->
             <h3>
                 <a href="{{ url($report->slug) }}">
-                    {{ $report->name }} Market Analysis {{ $report->base_year }} - {{ $report->forecast_year }}
+                    {{ $report->name }} Market Analysis
                 </a>
             </h3>
-            <p class="desc" title="{{ $report->summary }}">
+            <!-- Description -->
+            {{-- <p class="rp-report-desc">
                 {{ $report->summary }}
-            </p>
-            {{-- <div class="meta" style="font-size:13px;color:var(--muted); margin-bottom:8px;">
-                Base Year: {{ $report->base_year }} |
-                Forecast: {{ $report->forecast_year }}
-            </div> --}}
-            <div class="bottom">
-                <span class="price">
-                    {{-- Replace with actual price column if exists --}}
-                    $3,499
+            </p> --}}
+            <!-- Meta -->
+            <div class="rp-report-meta">
+                <div class="rp-meta-item">
+                    <span class="rp-meta-label">Market Size</span>
+                    <span class="rp-meta-value">{{ $report->forecast_year_value }}</span>
+                </div>
+                <div class="rp-meta-item">
+                    <span class="rp-meta-label">Forecast</span>
+                    <span class="rp-meta-value">{{ $report->forecast_year_value }}</span>
+                </div>
+                <div class="rp-meta-item">
+                    <span class="rp-meta-label">Period</span>
+                    <span class="rp-meta-value">{{ $report->forecast_year }}</span>
+                </div>
+            </div>
+            <!-- Details -->
+            <div class="rp-report-details">
+                <div class="rp-detail-row">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <span>-</span>
+                </div>
+                <div class="rp-detail-row">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                    <span>-</span>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="rp-report-footer">
+                <span class="rp-report-price">
+                    $3499
                 </span>
-                <a href="{{ url($report->slug) }}" class="btn-primary"
-                    style="font-size:13px;padding:6px 16px">
-                    <i class="fas fa-shopping-cart"></i> Buy Now
-                </a>
-                <a href="{{ url($report->slug) }}" class="text-link">
-                    Request Sample →
-                </a>
+                <div class="rp-report-actions">
+                    <a href="{{ url('report-detail', ['id' => $report->id]) }}" class="btn-primary rp-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy Now
+                    </a>
+                    <a href="{{ url('report-detail', ['id' => $report->id]) }}" class="rp-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </article>

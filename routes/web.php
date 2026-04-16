@@ -8,7 +8,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 
-Route::get('/reports/{industry?}', [ReportController::class, 'index']);
+Route::get('/reports/{industry}', [ReportController::class, 'index']);
 Route::get('/report/{industry}',   [ReportController::class, 'report_desc']);
 
 Route::get('/fetchReports', [ReportController::class, 'fetchReports']);
