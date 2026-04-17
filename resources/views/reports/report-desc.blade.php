@@ -238,338 +238,488 @@
 
 
 
- <!-- Sticky Top Bar (appears on scroll) -->
-  <div class="rd-stickybar" id="rdStickyBar" aria-hidden="true">
-    <div class="container">
-      <div class="title">Global Biotechnology Market Outlook</div>
-      <div class="mini-stats">
-        <span>Market Size <b>$3.5B</b></span>
-        <span>CAGR <b style="color:var(--primary-dark)">+14.2%</b></span>
-        <span>Forecast <b>$5.8B</b></span>
-      </div>
-      <div class="actions">
-        <button class="btn-outline"><i class="fas fa-download"></i> Sample</button>
-        <a href="contact.html" class="btn-primary"><i class="fas fa-shopping-cart"></i> Buy Now</a>
-      </div>
+    <!-- Sticky Top Bar (appears on scroll) -->
+    <div class="rd-stickybar" id="rdStickyBar" aria-hidden="true">
+        <div class="container">
+            <div class="title">{{ $report_details->report_name }} Market Outlook</div>
+            <div class="mini-stats">
+                <span>Market Size <b>{{ $report_details->base_year_value }}</b></span>
+                <span>CAGR <b style="color:var(--primary-dark)">+{{ $report_details->growth_rate }}</b></span>
+                <span>Forecast <b>{{ $report_details->forecast_year_value }}</b></span>
+            </div>
+            <div class="actions">
+                <button class="btn-outline"><i class="fas fa-download"></i> Sample</button>
+                <a href="{{ url('contact') }}" class="btn-primary"><i class="fas fa-shopping-cart"></i> Buy Now</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <main>
-    <!-- HERO -->
-    <section class="rd-hero" aria-labelledby="rd-title">
-      <div class="container">
-        <nav class="rd-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
-          <a href="reports.html">Reports</a><i class="fas fa-chevron-right"></i>
-          <a href="reports.html?industry=healthcare">Healthcare</a><i class="fas fa-chevron-right"></i>
-          <span>Global Biotechnology Market Outlook</span>
-        </nav>
-        <div class="rd-hero-grid">
-          <div>
-            <span class="rd-pill"><i class="fas fa-microscope"></i> Biotechnology · Healthcare</span>
-            <h1 id="rd-title" class="rd-h1">Global Biotechnology Market Outlook | Market Size, Share &amp; Growth Analysis</h1>
-            <p class="rd-desc">This report provides detailed insights into the global biotechnology market outlook including market size, key players, and future trends shaping the industry from 2024 through 2030.</p>
-            <div class="rd-badges">
-              <span class="rd-badge"><i class="far fa-calendar"></i> Base Year: 2024</span>
-              <span class="rd-badge"><i class="fas fa-globe"></i> 5 Regions</span>
-              <span class="rd-badge"><i class="fas fa-chart-line"></i> Forecast: 2024–2030</span>
-              <span class="rd-badge"><i class="far fa-file-lines"></i> 280 Pages</span>
+    <main>
+        <!-- HERO -->
+        <section class="rd-hero" aria-labelledby="rd-title">
+            <div class="container">
+                <nav class="rd-breadcrumb" aria-label="Breadcrumb">
+                    <a href="{{ url('/') }}">Home</a><i class="fas fa-chevron-right"></i>
+                    <a href="{{ url('/reports/' . $report_details->slug) }}">Reports</a><i class="fas fa-chevron-right"></i>
+                    <a href="{{ url('/reports/' . $report_details->slug) }}">{{ $report_details->industry_name }}</a><i
+                        class="fas fa-chevron-right"></i>
+                    <span>{{ $report_details->report_name }} Market Outlook</span>
+                </nav>
+                <div class="rd-hero-grid">
+                    <div>
+                        <span class="rd-pill"><i class="fas fa-microscope"></i> {{ $report_details->sub_industry_name }} ·
+                            {{ $report_details->industry_name }}</span>
+                        <h1 id="rd-title" class="rd-h1">{{ $report_details->report_name }} Market Outlook | Market Size,
+                            Share &amp;
+                            Growth Analysis</h1>
+                        <p class="rd-desc">This report provides detailed insights into the
+                            {{ $report_details->report_name }} market
+                            outlook including market size, key players, and future trends shaping the industry from
+                            {{ $report_details->base_year }} through {{ $report_details->forecast_year }}.</p>
+                        <div class="rd-badges">
+                            <span class="rd-badge"><i class="far fa-calendar"></i> Base Year:
+                                {{ $report_details->base_year }}</span>
+                            <span class="rd-badge"><i class="fas fa-globe"></i> 5 Regions</span>
+                            <span class="rd-badge"><i class="fas fa-chart-line"></i> Forecast:
+                                {{ $report_details->base_year }}–{{ $report_details->forecast_year }}</span>
+                            <span class="rd-badge"><i class="far fa-file-lines"></i> 280 Pages</span>
+                        </div>
+                        <div class="rd-stats">
+                            <div class="rd-stat">
+                                <div class="lbl">Market Size</div>
+                                <div class="val">{{ $report_details->base_year_value }}</div>
+                            </div>
+                            <div class="rd-stat">
+                                <div class="lbl">CAGR</div>
+                                <div class="val up">+{{ $report_details->growth_rate }}</div>
+                            </div>
+                            <div class="rd-stat">
+                                <div class="lbl">Forecast Value</div>
+                                <div class="val">{{ $report_details->forecast_year_value }}</div>
+                            </div>
+                        </div>
+                        <div class="rd-cta">
+                            <a href="{{ url('contact') }}" class="rd-btn-white"><i class="fas fa-shopping-cart"></i> Buy
+                                Full
+                                Report</a>
+                            <a href="{{ url('contact') }}" class="rd-btn-ghost"><i class="fas fa-download"></i> Download
+                                Sample</a>
+                            <a href="{{ url('contact') }}" class="rd-btn-ghost"><i class="far fa-comment-dots"></i> Talk to
+                                Analyst</a>
+                        </div>
+                    </div>
+                    <aside class="rd-preview" style="display: none" aria-label="Report preview">
+                        <div class="cover">
+                            <div>
+                                <div class="tag">Evointels Research</div>
+                                <h3>Global Biotechnology Market Outlook</h3>
+                            </div>
+                            <div>
+                                <div class="yr">2024</div>
+                                <div class="tag">280 Pages · 5 Regions</div>
+                            </div>
+                        </div>
+                        <div class="rd-price">
+                            <div><span class="now">$4,250</span><span class="was">$5,500</span></div>
+                            <span class="save">Save 22%</span>
+                        </div>
+                        <div class="rd-preview-cta">
+                            <a href="contact.html" class="btn-primary" style="text-align:center"><i
+                                    class="fas fa-shopping-cart"></i> Buy Now</a>
+                            <a href="contact.html" class="btn-outline" style="text-align:center"><i
+                                    class="fas fa-file-pdf"></i> Free Sample</a>
+                        </div>
+                    </aside>
+                </div>
             </div>
-            <div class="rd-stats">
-              <div class="rd-stat"><div class="lbl">Market Size</div><div class="val">$3.5B</div></div>
-              <div class="rd-stat"><div class="lbl">CAGR</div><div class="val up">+14.2%</div></div>
-              <div class="rd-stat"><div class="lbl">Forecast Value</div><div class="val">$5.8B</div></div>
+        </section>
+
+        <!-- MAIN -->
+        <section class="rd-main">
+            <div class="container">
+
+                <!-- Mobile sidebar toggle -->
+                <div class="rd-sidebar-mobile" id="rdMobileNav">
+                    <button type="button" id="rdMobileNavToggle">
+                        <span><i class="fas fa-list"></i> Report Sections</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <nav class="rd-sidebar" aria-label="Report sections (mobile)">
+                        <div class="heading">On this page</div>
+                        <a href="#sec-size" class="rd-nav-link"><i class="fas fa-chart-pie"></i> Market Size & Share</a>
+                        <a href="#sec-analysis" class="rd-nav-link"><i class="fas fa-chart-bar"></i> Market Analysis</a>
+                        <a href="#sec-trends" class="rd-nav-link"><i class="fas fa-bolt"></i> Trends & Insights</a>
+                        <a href="#sec-segments" class="rd-nav-link"><i class="fas fa-layer-group"></i> Segment
+                            Analysis</a>
+                        <a href="#sec-geo" class="rd-nav-link"><i class="fas fa-globe"></i> Geography Analysis</a>
+                        <a href="#sec-comp" class="rd-nav-link"><i class="fas fa-users-gear"></i> Competitive
+                            Landscape</a>
+                        <a href="#sec-players" class="rd-nav-link"><i class="fas fa-building"></i> Major Players</a>
+                        <a href="#sec-dev" class="rd-nav-link"><i class="fas fa-newspaper"></i> Industry Developments</a>
+                        <a href="#sec-toc" class="rd-nav-link"><i class="fas fa-list-ol"></i> Table of Contents</a>
+                        <a href="#sec-scope" class="rd-nav-link"><i class="fas fa-clipboard-list"></i> Scope of
+                            Report</a>
+                        <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
+                    </nav>
+                </div>
+
+                <div class="rd-layout">
+                    <!-- Sidebar -->
+                    <aside class="rd-sidebar" id="rdSidebar" aria-label="Report sections">
+                        <div class="heading">On this page</div>
+                        <a href="#sec-size" class="rd-nav-link"><i class="fas fa-chart-pie"></i> Market Size &amp;
+                            Share</a>
+                        <a href="#sec-analysis" class="rd-nav-link"><i class="fas fa-chart-bar"></i> Market Analysis</a>
+                        <a href="#sec-trends" class="rd-nav-link"><i class="fas fa-bolt"></i> Trends &amp; Insights</a>
+                        <a href="#sec-segments" class="rd-nav-link"><i class="fas fa-layer-group"></i> Segment
+                            Analysis</a>
+                        <a href="#sec-geo" class="rd-nav-link"><i class="fas fa-globe"></i> Geography Analysis</a>
+                        <a href="#sec-comp" class="rd-nav-link"><i class="fas fa-users-gear"></i> Competitive
+                            Landscape</a>
+                        <a href="#sec-players" class="rd-nav-link"><i class="fas fa-building"></i> Major Players</a>
+                        <a href="#sec-dev" class="rd-nav-link"><i class="fas fa-newspaper"></i> Industry Developments</a>
+                        <a href="#sec-toc" class="rd-nav-link"><i class="fas fa-list-ol"></i> Table of Contents</a>
+                        <a href="#sec-scope" class="rd-nav-link"><i class="fas fa-clipboard-list"></i> Scope of
+                            Report</a>
+                        <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
+                    </aside>
+
+                    <!-- Content -->
+                    <div class="rd-content">
+
+                        <article class="rd-section" id="sec-size">
+                            <h2><span class="ico"><i class="fas fa-chart-pie"></i></span> Market Size &amp; Share</h2>
+                            <p class="lead">{{ $report_desc->market_analysis }}</p>
+                            <div class="rd-tiles">
+                                <div class="rd-tile">
+                                    <div class="lbl">Market Size ({{ $report_details->base_year }})</div>
+                                    <div class="val">{{ $report_details->base_year_value }}</div>
+                                </div>
+                                <div class="rd-tile">
+                                    <div class="lbl">CAGR
+                                        ({{ $report_details->base_year }}–{{ $report_details->forecast_year }})</div>
+                                    <div class="val">+{{ $report_details->growth_rate }}</div>
+                                </div>
+                                <div class="rd-tile">
+                                    <div class="lbl">Forecast Value (2030)</div>
+                                    <div class="val">{{ $report_details->forecast_year_value }}</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-analysis">
+                            <h2><span class="ico"><i class="fas fa-chart-bar"></i></span> Market Analysis</h2>
+                            <p>{{ $report_desc->market_analysis }}</p>
+                            <h3>Key Findings</h3>
+                            <ul class="rd-list">
+                                <li><i class="fas fa-circle-check"></i> Strong growth expected during the forecast period
+                                    across all major sub-segments</li>
+                                <li><i class="fas fa-circle-check"></i> Technology innovation creating new opportunities in
+                                    cell &amp; gene therapy</li>
+                                <li><i class="fas fa-circle-check"></i> Regional expansion into Asia Pacific driving
+                                    meaningful incremental growth</li>
+                                <li><i class="fas fa-circle-check"></i> Strategic partnerships and licensing deals between
+                                    biotech and pharma increasing</li>
+                            </ul>
+                        </article>
+
+                        <article class="rd-section" id="sec-trends">
+                            <h2><span class="ico"><i class="fas fa-bolt"></i></span> Trends &amp; Insights</h2>
+                            <p class="lead">The competitive environment is being reshaped by three structural forces —
+                                drivers, challenges, and emerging opportunities.</p>
+                            <div class="rd-cards-3">
+                                <div class="rd-mini green">
+                                    <div class="icn"><i class="fas fa-arrow-trend-up"></i></div>
+                                    <h4>Market Drivers</h4>
+                                    {{-- <ul>
+                                        <li>Growing demand across industries</li>
+                                        <li>Technological advancements</li>
+                                        <li>Increasing R&amp;D investments</li>
+                                    </ul> --}}
+
+
+
+                                    @if (!empty($report_desc->market_drivers))
+                                        <ul class="check-list">
+                                            @foreach (json_decode($report_desc->market_drivers) as $key => $value)
+                                                <li>{{ $value->text }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+
+
+
+
+
+
+                                </div>
+                                <div class="rd-mini amber">
+                                    <div class="icn"><i class="fas fa-triangle-exclamation"></i></div>
+                                    <h4>Market Challenges</h4>
+                                    @if (!empty($report_desc->market_challenges))
+                                        <ul class="check-list">
+                                            @foreach (json_decode($report_desc->market_challenges) as $key1 => $value1)
+                                                <li>{{ $value1->text }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </div>
+                                <div class="rd-mini blue">
+                                    <div class="icn"><i class="fas fa-lightbulb"></i></div>
+                                    <h4>Opportunities</h4>
+                                    @if (!empty($report_desc->market_opportunities))
+                                        <ul class="check-list">
+                                            @foreach (json_decode($report_desc->market_opportunities) as $key2 => $value2)
+                                                <li>{{ $value2->text }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-segments">
+                            <h2><span class="ico"><i class="fas fa-layer-group"></i></span> Segment Analysis</h2>
+                            <p class="lead">The market is segmented across technology, application, and end-user. Click
+                                each segment to explore detail.</p>
+                            <div class="rd-acc">
+                                <div class="rd-acc-item open">
+                                    <button type="button" class="rd-acc-trigger">By Technology — DNA Sequencing, Cell
+                                        Culture, Fermentation <i class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">DNA sequencing leads with the largest revenue contribution,
+                                        followed by cell culture and fermentation. Next-generation sequencing platforms are
+                                        reducing per-genome costs and unlocking population-scale genomics programs.</div>
+                                </div>
+                                <div class="rd-acc-item">
+                                    <button type="button" class="rd-acc-trigger">By Application — Health, Food &amp;
+                                        Agriculture, Industrial <i class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">Health applications dominate revenue share with drug
+                                        discovery, gene therapy, and diagnostics. Agricultural biotech is the
+                                        fastest-growing segment driven by climate-resilient crops.</div>
+                                </div>
+                                <div class="rd-acc-item">
+                                    <button type="button" class="rd-acc-trigger">By End User — Biopharma, CROs, Academic
+                                        Institutes <i class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">Biopharma companies remain the largest end users; CRO
+                                        outsourcing is rising as companies prioritize capital efficiency and faster trial
+                                        timelines.</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-geo">
+                            <h2><span class="ico"><i class="fas fa-globe"></i></span> Geography Analysis</h2>
+                            <p class="lead">Regional contribution to the global biotechnology market in 2024.</p>
+                            <div class="rd-geo">
+                                <div class="rd-geo-row">
+                                    <div class="top"><span>North America</span><span>35%</span></div>
+                                    <div class="rd-bar"><span style="width:35%"></span></div>
+                                </div>
+                                <div class="rd-geo-row">
+                                    <div class="top"><span>Europe</span><span>28%</span></div>
+                                    <div class="rd-bar"><span style="width:28%"></span></div>
+                                </div>
+                                <div class="rd-geo-row">
+                                    <div class="top"><span>Asia Pacific</span><span>22%</span></div>
+                                    <div class="rd-bar"><span style="width:22%"></span></div>
+                                </div>
+                                <div class="rd-geo-row">
+                                    <div class="top"><span>Latin America</span><span>10%</span></div>
+                                    <div class="rd-bar"><span style="width:10%"></span></div>
+                                </div>
+                                <div class="rd-geo-row">
+                                    <div class="top"><span>Middle East &amp; Africa</span><span>5%</span></div>
+                                    <div class="rd-bar"><span style="width:5%"></span></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-comp">
+                            <h2><span class="ico"><i class="fas fa-users-gear"></i></span> Competitive Landscape</h2>
+                            <p>The competitive landscape is moderately consolidated with the top four players accounting for
+                                nearly 45% of global revenue. Companies are competing on therapeutic pipeline depth,
+                                manufacturing scale, geographic footprint, and licensing partnerships. Recent activity
+                                emphasizes M&amp;A, in-licensing of late-stage assets, and capacity expansion in Asia
+                                Pacific.</p>
+                            <div class="rd-grid-2">
+                                <ul class="rd-list">
+                                    <li><i class="fas fa-circle-check"></i> Top 4 players hold ~45% market share</li>
+                                    <li><i class="fas fa-circle-check"></i> Pipeline depth as primary differentiator</li>
+                                </ul>
+                                <ul class="rd-list">
+                                    <li><i class="fas fa-circle-check"></i> Increasing M&amp;A and in-licensing activity
+                                    </li>
+                                    <li><i class="fas fa-circle-check"></i> APAC capacity expansion accelerating</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-players">
+                            <h2><span class="ico"><i class="fas fa-building"></i></span> Major Players</h2>
+                            <p class="lead">Leading companies profiled in this report:</p>
+                            <div class="rd-players">
+                                <div class="rd-player">
+                                    <div class="av">P</div>
+                                    <div class="nm">Pfizer</div>
+                                    <div class="role">Biopharmaceuticals</div>
+                                </div>
+                                <div class="rd-player">
+                                    <div class="av">R</div>
+                                    <div class="nm">Roche</div>
+                                    <div class="role">Diagnostics &amp; Therapeutics</div>
+                                </div>
+                                <div class="rd-player">
+                                    <div class="av">N</div>
+                                    <div class="nm">Novartis</div>
+                                    <div class="role">Innovative Medicines</div>
+                                </div>
+                                <div class="rd-player">
+                                    <div class="av">J</div>
+                                    <div class="nm">Johnson &amp; Johnson</div>
+                                    <div class="role">Pharma &amp; MedTech</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-dev">
+                            <h2><span class="ico"><i class="fas fa-newspaper"></i></span> Industry Developments</h2>
+                            <p class="lead">Recent strategic and regulatory milestones across 2024.</p>
+                            <div class="rd-timeline">
+
+                                {{-- industry_developments --}}
+
+                                @if (!empty($report_desc->industry_developments))
+                                    <ul class="check-list">
+                                        @foreach (json_decode($report_desc->industry_developments) as $key => $value)
+                                            <div class="rd-tl-item">
+                                                <div class="q">{{$value->year}}</div>
+                                                <div class="t">{{$value->development}}</div>
+                                            </div>
+                                        @endforeach
+                                    </ul>
+                                @endif
+
+
+                                {{-- <div class="rd-tl-item">
+                                    <div class="q">Q1 2024</div>
+                                    <div class="t">Regulatory approval for next-generation gene therapy platform</div>
+                                </div> --}}
+                                {{-- <div class="rd-tl-item">
+                                    <div class="q">Q2 2024</div>
+                                    <div class="t">Strategic partnership announced between leading biotech and global
+                                        pharma</div>
+                                </div>
+                                <div class="rd-tl-item">
+                                    <div class="q">Q3 2024</div>
+                                    <div class="t">New product launch — first-in-class oncology biologic</div>
+                                </div>
+                                <div class="rd-tl-item">
+                                    <div class="q">Q4 2024</div>
+                                    <div class="t">Major acquisition reshaping the cell &amp; gene therapy landscape
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-toc">
+                            <h2><span class="ico"><i class="fas fa-list-ol"></i></span> Table of Contents</h2>
+                            <div class="rd-toc">
+                                <a href="#sec-size">1. Executive Summary <span>12 pages</span></a>
+                                <a href="#sec-analysis">2. Market Introduction &amp; Methodology <span>18 pages</span></a>
+                                <a href="#sec-trends">3. Market Dynamics — Drivers, Restraints, Opportunities <span>32
+                                        pages</span></a>
+                                <a href="#sec-segments">4. Segment Analysis — Technology, Application, End User <span>56
+                                        pages</span></a>
+                                <a href="#sec-geo">5. Regional Analysis — 5 Regions <span>72 pages</span></a>
+                                <a href="#sec-comp">6. Competitive Landscape <span>40 pages</span></a>
+                                <a href="#sec-players">7. Company Profiles <span>38 pages</span></a>
+                                <a href="#sec-dev">8. Industry Developments &amp; Outlook <span>12 pages</span></a>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-scope">
+                            <h2><span class="ico"><i class="fas fa-clipboard-list"></i></span> Scope of Report</h2>
+                            <div class="rd-scope">
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="far fa-calendar"></i> Study Period</div>
+                                    <div class="sc-val">2024 – 2030 (Base Year: 2024)</div>
+                                </div>
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="fas fa-globe"></i> Geography</div>
+                                    <div class="sc-val">North America, Europe, Asia Pacific, Latin America, MEA</div>
+                                </div>
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="fas fa-building"></i> Companies Covered</div>
+                                    <div class="sc-val">Pfizer, Roche, Novartis, Johnson &amp; Johnson + 20 more</div>
+                                </div>
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="fas fa-dollar-sign"></i> Market Size (2024)</div>
+                                    <div class="sc-val">$3.5 Billion</div>
+                                </div>
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="fas fa-chart-line"></i> Forecast (2030)</div>
+                                    <div class="sc-val">$5.8 Billion · CAGR 14.2%</div>
+                                </div>
+                                <div class="rd-scope-card">
+                                    <div class="sc-head"><i class="fas fa-database"></i> Data Sources</div>
+                                    <div class="sc-val">Primary interviews, regulatory filings, proprietary models · 280
+                                        Pages · PDF + Excel</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="rd-section" id="sec-faq">
+                            <h2><span class="ico"><i class="far fa-circle-question"></i></span> Frequently Asked
+                                Questions</h2>
+                            <div class="rd-acc">
+                                <div class="rd-acc-item open">
+                                    <button type="button" class="rd-acc-trigger">What is the market growth rate? <i
+                                            class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">The global biotechnology market is projected to grow at a CAGR
+                                        of <b>14.2%</b> from 2024 through 2030.</div>
+                                </div>
+                                <div class="rd-acc-item">
+                                    <button type="button" class="rd-acc-trigger">How many pages does the report contain?
+                                        <i class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">The full report contains <b>280 pages</b> covering market
+                                        sizing, segmentation, regional analysis, and company profiles.</div>
+                                </div>
+                                <div class="rd-acc-item">
+                                    <button type="button" class="rd-acc-trigger">Which regions are covered? <i
+                                            class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">The report covers 5 regions: North America, Europe, Asia
+                                        Pacific, Latin America, and Middle East &amp; Africa.</div>
+                                </div>
+                                <div class="rd-acc-item">
+                                    <button type="button" class="rd-acc-trigger">What is included with the purchase? <i
+                                            class="fas fa-chevron-down"></i></button>
+                                    <div class="rd-acc-body">A PDF report, an Excel data pack, and a complimentary
+                                        30-minute analyst briefing.</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <section class="rd-cta-final" aria-label="Get the report">
+                            <h2><span class="ico" style="background:rgba(255,255,255,.18);color:#fff"><i
+                                        class="fas fa-rocket"></i></span> Ready to Unlock Full Insights?</h2>
+                            <p>Get the complete 280-page report with detailed segmentation, regional deep-dives, and company
+                                profiles — plus a complimentary analyst briefing.</p>
+                            <div class="group">
+                                <a href="contact.html" class="rd-btn-white"><i class="fas fa-shopping-cart"></i> Buy Full
+                                    Report</a>
+                                <a href="contact.html" class="rd-btn-ghost"><i class="fas fa-download"></i> Download
+                                    Sample</a>
+                                <a href="contact.html" class="rd-btn-ghost"><i class="far fa-comment-dots"></i> Talk to
+                                    Analyst</a>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
             </div>
-            <div class="rd-cta">
-              <a href="contact.html" class="rd-btn-white"><i class="fas fa-shopping-cart"></i> Buy Full Report</a>
-              <a href="contact.html" class="rd-btn-ghost"><i class="fas fa-download"></i> Download Sample</a>
-              <a href="contact.html" class="rd-btn-ghost"><i class="far fa-comment-dots"></i> Talk to Analyst</a>
-            </div>
-          </div>
-          <aside class="rd-preview" aria-label="Report preview">
-            <div class="cover">
-              <div>
-                <div class="tag">Evointels Research</div>
-                <h3>Global Biotechnology Market Outlook</h3>
-              </div>
-              <div>
-                <div class="yr">2024</div>
-                <div class="tag">280 Pages · 5 Regions</div>
-              </div>
-            </div>
-            <div class="rd-price">
-              <div><span class="now">$4,250</span><span class="was">$5,500</span></div>
-              <span class="save">Save 22%</span>
-            </div>
-            <div class="rd-preview-cta">
-              <a href="contact.html" class="btn-primary" style="text-align:center"><i class="fas fa-shopping-cart"></i> Buy Now</a>
-              <a href="contact.html" class="btn-outline" style="text-align:center"><i class="fas fa-file-pdf"></i> Free Sample</a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAIN -->
-    <section class="rd-main">
-      <div class="container">
-
-        <!-- Mobile sidebar toggle -->
-        <div class="rd-sidebar-mobile" id="rdMobileNav">
-          <button type="button" id="rdMobileNavToggle">
-            <span><i class="fas fa-list"></i> Report Sections</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <nav class="rd-sidebar" aria-label="Report sections (mobile)">
-            <div class="heading">On this page</div>
-            <a href="#sec-size" class="rd-nav-link"><i class="fas fa-chart-pie"></i> Market Size & Share</a>
-            <a href="#sec-analysis" class="rd-nav-link"><i class="fas fa-chart-bar"></i> Market Analysis</a>
-            <a href="#sec-trends" class="rd-nav-link"><i class="fas fa-bolt"></i> Trends & Insights</a>
-            <a href="#sec-segments" class="rd-nav-link"><i class="fas fa-layer-group"></i> Segment Analysis</a>
-            <a href="#sec-geo" class="rd-nav-link"><i class="fas fa-globe"></i> Geography Analysis</a>
-            <a href="#sec-comp" class="rd-nav-link"><i class="fas fa-users-gear"></i> Competitive Landscape</a>
-            <a href="#sec-players" class="rd-nav-link"><i class="fas fa-building"></i> Major Players</a>
-            <a href="#sec-dev" class="rd-nav-link"><i class="fas fa-newspaper"></i> Industry Developments</a>
-            <a href="#sec-toc" class="rd-nav-link"><i class="fas fa-list-ol"></i> Table of Contents</a>
-            <a href="#sec-scope" class="rd-nav-link"><i class="fas fa-clipboard-list"></i> Scope of Report</a>
-            <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
-          </nav>
-        </div>
-
-        <div class="rd-layout">
-          <!-- Sidebar -->
-          <aside class="rd-sidebar" id="rdSidebar" aria-label="Report sections">
-            <div class="heading">On this page</div>
-            <a href="#sec-size" class="rd-nav-link"><i class="fas fa-chart-pie"></i> Market Size &amp; Share</a>
-            <a href="#sec-analysis" class="rd-nav-link"><i class="fas fa-chart-bar"></i> Market Analysis</a>
-            <a href="#sec-trends" class="rd-nav-link"><i class="fas fa-bolt"></i> Trends &amp; Insights</a>
-            <a href="#sec-segments" class="rd-nav-link"><i class="fas fa-layer-group"></i> Segment Analysis</a>
-            <a href="#sec-geo" class="rd-nav-link"><i class="fas fa-globe"></i> Geography Analysis</a>
-            <a href="#sec-comp" class="rd-nav-link"><i class="fas fa-users-gear"></i> Competitive Landscape</a>
-            <a href="#sec-players" class="rd-nav-link"><i class="fas fa-building"></i> Major Players</a>
-            <a href="#sec-dev" class="rd-nav-link"><i class="fas fa-newspaper"></i> Industry Developments</a>
-            <a href="#sec-toc" class="rd-nav-link"><i class="fas fa-list-ol"></i> Table of Contents</a>
-            <a href="#sec-scope" class="rd-nav-link"><i class="fas fa-clipboard-list"></i> Scope of Report</a>
-            <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
-          </aside>
-
-          <!-- Content -->
-          <div class="rd-content">
-
-            <article class="rd-section" id="sec-size">
-              <h2><span class="ico"><i class="fas fa-chart-pie"></i></span> Market Size &amp; Share</h2>
-              <p class="lead">The global biotechnology market reached <b>$3.5 billion</b> in 2024 and is projected to expand at a <b>14.2% CAGR</b> to reach <b>$5.8 billion</b> by 2030, driven by rapid innovation across therapeutics, diagnostics, and bio-manufacturing.</p>
-              <div class="rd-tiles">
-                <div class="rd-tile"><div class="lbl">Market Size (2024)</div><div class="val">$3.5B</div></div>
-                <div class="rd-tile"><div class="lbl">CAGR (2024–2030)</div><div class="val">+14.2%</div></div>
-                <div class="rd-tile"><div class="lbl">Forecast Value (2030)</div><div class="val">$5.8B</div></div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-analysis">
-              <h2><span class="ico"><i class="fas fa-chart-bar"></i></span> Market Analysis</h2>
-              <p>Biotechnology continues to evolve as a cornerstone of modern healthcare and industrial innovation. Demand is being propelled by an aging global population, the rise of precision medicine, and accelerated adoption of bioprocessing technologies across pharmaceuticals, agriculture, and industrial applications.</p>
-              <h3>Key Findings</h3>
-              <ul class="rd-list">
-                <li><i class="fas fa-circle-check"></i> Strong growth expected during the forecast period across all major sub-segments</li>
-                <li><i class="fas fa-circle-check"></i> Technology innovation creating new opportunities in cell &amp; gene therapy</li>
-                <li><i class="fas fa-circle-check"></i> Regional expansion into Asia Pacific driving meaningful incremental growth</li>
-                <li><i class="fas fa-circle-check"></i> Strategic partnerships and licensing deals between biotech and pharma increasing</li>
-              </ul>
-            </article>
-
-            <article class="rd-section" id="sec-trends">
-              <h2><span class="ico"><i class="fas fa-bolt"></i></span> Trends &amp; Insights</h2>
-              <p class="lead">The competitive environment is being reshaped by three structural forces — drivers, challenges, and emerging opportunities.</p>
-              <div class="rd-cards-3">
-                <div class="rd-mini green">
-                  <div class="icn"><i class="fas fa-arrow-trend-up"></i></div>
-                  <h4>Market Drivers</h4>
-                  <ul>
-                    <li>Growing demand across industries</li>
-                    <li>Technological advancements</li>
-                    <li>Increasing R&amp;D investments</li>
-                  </ul>
-                </div>
-                <div class="rd-mini amber">
-                  <div class="icn"><i class="fas fa-triangle-exclamation"></i></div>
-                  <h4>Market Challenges</h4>
-                  <ul>
-                    <li>High competition</li>
-                    <li>Regulatory complexity</li>
-                    <li>Supply chain issues</li>
-                  </ul>
-                </div>
-                <div class="rd-mini blue">
-                  <div class="icn"><i class="fas fa-lightbulb"></i></div>
-                  <h4>Opportunities</h4>
-                  <ul>
-                    <li>Emerging markets</li>
-                    <li>Product innovation</li>
-                    <li>Strategic partnerships</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-segments">
-              <h2><span class="ico"><i class="fas fa-layer-group"></i></span> Segment Analysis</h2>
-              <p class="lead">The market is segmented across technology, application, and end-user. Click each segment to explore detail.</p>
-              <div class="rd-acc">
-                <div class="rd-acc-item open">
-                  <button type="button" class="rd-acc-trigger">By Technology — DNA Sequencing, Cell Culture, Fermentation <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">DNA sequencing leads with the largest revenue contribution, followed by cell culture and fermentation. Next-generation sequencing platforms are reducing per-genome costs and unlocking population-scale genomics programs.</div>
-                </div>
-                <div class="rd-acc-item">
-                  <button type="button" class="rd-acc-trigger">By Application — Health, Food &amp; Agriculture, Industrial <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">Health applications dominate revenue share with drug discovery, gene therapy, and diagnostics. Agricultural biotech is the fastest-growing segment driven by climate-resilient crops.</div>
-                </div>
-                <div class="rd-acc-item">
-                  <button type="button" class="rd-acc-trigger">By End User — Biopharma, CROs, Academic Institutes <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">Biopharma companies remain the largest end users; CRO outsourcing is rising as companies prioritize capital efficiency and faster trial timelines.</div>
-                </div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-geo">
-              <h2><span class="ico"><i class="fas fa-globe"></i></span> Geography Analysis</h2>
-              <p class="lead">Regional contribution to the global biotechnology market in 2024.</p>
-              <div class="rd-geo">
-                <div class="rd-geo-row"><div class="top"><span>North America</span><span>35%</span></div><div class="rd-bar"><span style="width:35%"></span></div></div>
-                <div class="rd-geo-row"><div class="top"><span>Europe</span><span>28%</span></div><div class="rd-bar"><span style="width:28%"></span></div></div>
-                <div class="rd-geo-row"><div class="top"><span>Asia Pacific</span><span>22%</span></div><div class="rd-bar"><span style="width:22%"></span></div></div>
-                <div class="rd-geo-row"><div class="top"><span>Latin America</span><span>10%</span></div><div class="rd-bar"><span style="width:10%"></span></div></div>
-                <div class="rd-geo-row"><div class="top"><span>Middle East &amp; Africa</span><span>5%</span></div><div class="rd-bar"><span style="width:5%"></span></div></div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-comp">
-              <h2><span class="ico"><i class="fas fa-users-gear"></i></span> Competitive Landscape</h2>
-              <p>The competitive landscape is moderately consolidated with the top four players accounting for nearly 45% of global revenue. Companies are competing on therapeutic pipeline depth, manufacturing scale, geographic footprint, and licensing partnerships. Recent activity emphasizes M&amp;A, in-licensing of late-stage assets, and capacity expansion in Asia Pacific.</p>
-              <div class="rd-grid-2">
-                <ul class="rd-list">
-                  <li><i class="fas fa-circle-check"></i> Top 4 players hold ~45% market share</li>
-                  <li><i class="fas fa-circle-check"></i> Pipeline depth as primary differentiator</li>
-                </ul>
-                <ul class="rd-list">
-                  <li><i class="fas fa-circle-check"></i> Increasing M&amp;A and in-licensing activity</li>
-                  <li><i class="fas fa-circle-check"></i> APAC capacity expansion accelerating</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-players">
-              <h2><span class="ico"><i class="fas fa-building"></i></span> Major Players</h2>
-              <p class="lead">Leading companies profiled in this report:</p>
-              <div class="rd-players">
-                <div class="rd-player"><div class="av">P</div><div class="nm">Pfizer</div><div class="role">Biopharmaceuticals</div></div>
-                <div class="rd-player"><div class="av">R</div><div class="nm">Roche</div><div class="role">Diagnostics &amp; Therapeutics</div></div>
-                <div class="rd-player"><div class="av">N</div><div class="nm">Novartis</div><div class="role">Innovative Medicines</div></div>
-                <div class="rd-player"><div class="av">J</div><div class="nm">Johnson &amp; Johnson</div><div class="role">Pharma &amp; MedTech</div></div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-dev">
-              <h2><span class="ico"><i class="fas fa-newspaper"></i></span> Industry Developments</h2>
-              <p class="lead">Recent strategic and regulatory milestones across 2024.</p>
-              <div class="rd-timeline">
-                <div class="rd-tl-item"><div class="q">Q1 2024</div><div class="t">Regulatory approval for next-generation gene therapy platform</div></div>
-                <div class="rd-tl-item"><div class="q">Q2 2024</div><div class="t">Strategic partnership announced between leading biotech and global pharma</div></div>
-                <div class="rd-tl-item"><div class="q">Q3 2024</div><div class="t">New product launch — first-in-class oncology biologic</div></div>
-                <div class="rd-tl-item"><div class="q">Q4 2024</div><div class="t">Major acquisition reshaping the cell &amp; gene therapy landscape</div></div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-toc">
-              <h2><span class="ico"><i class="fas fa-list-ol"></i></span> Table of Contents</h2>
-              <div class="rd-toc">
-                <a href="#sec-size">1. Executive Summary <span>12 pages</span></a>
-                <a href="#sec-analysis">2. Market Introduction &amp; Methodology <span>18 pages</span></a>
-                <a href="#sec-trends">3. Market Dynamics — Drivers, Restraints, Opportunities <span>32 pages</span></a>
-                <a href="#sec-segments">4. Segment Analysis — Technology, Application, End User <span>56 pages</span></a>
-                <a href="#sec-geo">5. Regional Analysis — 5 Regions <span>72 pages</span></a>
-                <a href="#sec-comp">6. Competitive Landscape <span>40 pages</span></a>
-                <a href="#sec-players">7. Company Profiles <span>38 pages</span></a>
-                <a href="#sec-dev">8. Industry Developments &amp; Outlook <span>12 pages</span></a>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-scope">
-              <h2><span class="ico"><i class="fas fa-clipboard-list"></i></span> Scope of Report</h2>
-              <div class="rd-scope">
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="far fa-calendar"></i> Study Period</div>
-                  <div class="sc-val">2024 – 2030 (Base Year: 2024)</div>
-                </div>
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="fas fa-globe"></i> Geography</div>
-                  <div class="sc-val">North America, Europe, Asia Pacific, Latin America, MEA</div>
-                </div>
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="fas fa-building"></i> Companies Covered</div>
-                  <div class="sc-val">Pfizer, Roche, Novartis, Johnson &amp; Johnson + 20 more</div>
-                </div>
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="fas fa-dollar-sign"></i> Market Size (2024)</div>
-                  <div class="sc-val">$3.5 Billion</div>
-                </div>
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="fas fa-chart-line"></i> Forecast (2030)</div>
-                  <div class="sc-val">$5.8 Billion · CAGR 14.2%</div>
-                </div>
-                <div class="rd-scope-card">
-                  <div class="sc-head"><i class="fas fa-database"></i> Data Sources</div>
-                  <div class="sc-val">Primary interviews, regulatory filings, proprietary models · 280 Pages · PDF + Excel</div>
-                </div>
-              </div>
-            </article>
-
-            <article class="rd-section" id="sec-faq">
-              <h2><span class="ico"><i class="far fa-circle-question"></i></span> Frequently Asked Questions</h2>
-              <div class="rd-acc">
-                <div class="rd-acc-item open">
-                  <button type="button" class="rd-acc-trigger">What is the market growth rate? <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">The global biotechnology market is projected to grow at a CAGR of <b>14.2%</b> from 2024 through 2030.</div>
-                </div>
-                <div class="rd-acc-item">
-                  <button type="button" class="rd-acc-trigger">How many pages does the report contain? <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">The full report contains <b>280 pages</b> covering market sizing, segmentation, regional analysis, and company profiles.</div>
-                </div>
-                <div class="rd-acc-item">
-                  <button type="button" class="rd-acc-trigger">Which regions are covered? <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">The report covers 5 regions: North America, Europe, Asia Pacific, Latin America, and Middle East &amp; Africa.</div>
-                </div>
-                <div class="rd-acc-item">
-                  <button type="button" class="rd-acc-trigger">What is included with the purchase? <i class="fas fa-chevron-down"></i></button>
-                  <div class="rd-acc-body">A PDF report, an Excel data pack, and a complimentary 30-minute analyst briefing.</div>
-                </div>
-              </div>
-            </article>
-
-            <section class="rd-cta-final" aria-label="Get the report">
-              <h2><span class="ico" style="background:rgba(255,255,255,.18);color:#fff"><i class="fas fa-rocket"></i></span> Ready to Unlock Full Insights?</h2>
-              <p>Get the complete 280-page report with detailed segmentation, regional deep-dives, and company profiles — plus a complimentary analyst briefing.</p>
-              <div class="group">
-                <a href="contact.html" class="rd-btn-white"><i class="fas fa-shopping-cart"></i> Buy Full Report</a>
-                <a href="contact.html" class="rd-btn-ghost"><i class="fas fa-download"></i> Download Sample</a>
-                <a href="contact.html" class="rd-btn-ghost"><i class="far fa-comment-dots"></i> Talk to Analyst</a>
-              </div>
-            </section>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-
-
-
-
-
-
-
+        </section>
+    </main>
 @endsection
 @section('scripts')
     <script src="{{ asset('assets/js/report_desc.js') }}"></script>

@@ -3565,7 +3565,8 @@ a:hover {
 /* Drivers / challenges / opps cards */
 .rd-cards-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(1, 1fr);
     gap: 14px;
 }
 .rd-mini {
@@ -3772,8 +3773,8 @@ a:hover {
     letter-spacing: 0.5px;
 }
 .rd-tl-item .t {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 500;
     color: var(--foreground);
     margin-top: 2px;
 }
