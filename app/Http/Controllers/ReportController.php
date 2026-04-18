@@ -49,6 +49,7 @@ class ReportController extends Controller
                 'report_master.created_at',
                 'report_master.summary',
                 'industries_master.name as industry_name',
+                'industries_master.top_players',
                 'industries_master.slug',
                 'industries_master.initial as industry_initial',
                 'sub_industries_master.name as sub_industry_name',

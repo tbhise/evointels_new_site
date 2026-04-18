@@ -50,18 +50,14 @@
                                 <h2 style="font-size:20px;font-weight:700;margin-bottom:16px">Market Overview</h2>
                                 <p style="color:var(--muted);line-height:1.7;margin-bottom:20px;font-size:14px">
                                     {{ $report_desc->market_analysis }}</p>
-
                                 @if (!empty($report_desc->market_drivers))
                                     <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px">Key Market Drivers</h3>
                                     <ul class="check-list">
                                         @foreach (json_decode($report_desc->market_drivers) as $key => $value)
                                             <li>{{ $value->text }}</li>
-
                                         @endforeach
                                     </ul>
                                 @endif
-
-
                                 <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px">Regional Analysis</h3>
                                 <p style="color:var(--muted);line-height:1.7;margin-bottom:20px">North America currently
                                     holds the
@@ -233,11 +229,7 @@
                 </div>
             </div>
         </section>
-
     </main> --}}
-
-
-
     <!-- Sticky Top Bar (appears on scroll) -->
     <div class="rd-stickybar" id="rdStickyBar" aria-hidden="true">
         <div class="container">
@@ -253,7 +245,6 @@
             </div>
         </div>
     </div>
-
     <main>
         <!-- HERO -->
         <section class="rd-hero" aria-labelledby="rd-title">
@@ -333,11 +324,9 @@
                 </div>
             </div>
         </section>
-
         <!-- MAIN -->
         <section class="rd-main">
             <div class="container">
-
                 <!-- Mobile sidebar toggle -->
                 <div class="rd-sidebar-mobile" id="rdMobileNav">
                     <button type="button" id="rdMobileNavToggle">
@@ -362,7 +351,6 @@
                         <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
                     </nav>
                 </div>
-
                 <div class="rd-layout">
                     <!-- Sidebar -->
                     <aside class="rd-sidebar" id="rdSidebar" aria-label="Report sections">
@@ -383,10 +371,8 @@
                             Report</a>
                         <a href="#sec-faq" class="rd-nav-link"><i class="far fa-circle-question"></i> FAQs</a>
                     </aside>
-
                     <!-- Content -->
                     <div class="rd-content">
-
                         <article class="rd-section" id="sec-size">
                             <h2><span class="ico"><i class="fas fa-chart-pie"></i></span> Market Size &amp; Share</h2>
                             <p class="lead">{{ $report_desc->market_analysis }}</p>
@@ -406,7 +392,6 @@
                                 </div>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-analysis">
                             <h2><span class="ico"><i class="fas fa-chart-bar"></i></span> Market Analysis</h2>
                             <p>{{ $report_desc->market_analysis }}</p>
@@ -422,7 +407,6 @@
                                     biotech and pharma increasing</li>
                             </ul>
                         </article>
-
                         <article class="rd-section" id="sec-trends">
                             <h2><span class="ico"><i class="fas fa-bolt"></i></span> Trends &amp; Insights</h2>
                             <p class="lead">The competitive environment is being reshaped by three structural forces —
@@ -436,9 +420,6 @@
                                         <li>Technological advancements</li>
                                         <li>Increasing R&amp;D investments</li>
                                     </ul> --}}
-
-
-
                                     @if (!empty($report_desc->market_drivers))
                                         <ul class="check-list">
                                             @foreach (json_decode($report_desc->market_drivers) as $key => $value)
@@ -446,13 +427,6 @@
                                             @endforeach
                                         </ul>
                                     @endif
-
-
-
-
-
-
-
                                 </div>
                                 <div class="rd-mini amber">
                                     <div class="icn"><i class="fas fa-triangle-exclamation"></i></div>
@@ -478,7 +452,6 @@
                                 </div>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-segments">
                             <h2><span class="ico"><i class="fas fa-layer-group"></i></span> Segment Analysis</h2>
                             <p class="lead">The market is segmented across technology, application, and end-user. Click
@@ -507,7 +480,6 @@
                                 </div>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-geo">
                             <h2><span class="ico"><i class="fas fa-globe"></i></span> Geography Analysis</h2>
                             <p class="lead">Regional contribution to the global biotechnology market in 2024.</p>
@@ -534,7 +506,6 @@
                                 </div>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-comp">
                             <h2><span class="ico"><i class="fas fa-users-gear"></i></span> Competitive Landscape</h2>
                             <p>The competitive landscape is moderately consolidated with the top four players accounting for
@@ -554,71 +525,43 @@
                                 </ul>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-players">
                             <h2><span class="ico"><i class="fas fa-building"></i></span> Major Players</h2>
                             <p class="lead">Leading companies profiled in this report:</p>
                             <div class="rd-players">
-                                <div class="rd-player">
-                                    <div class="av">P</div>
-                                    <div class="nm">Pfizer</div>
-                                    <div class="role">Biopharmaceuticals</div>
-                                </div>
-                                <div class="rd-player">
-                                    <div class="av">R</div>
-                                    <div class="nm">Roche</div>
-                                    <div class="role">Diagnostics &amp; Therapeutics</div>
-                                </div>
-                                <div class="rd-player">
-                                    <div class="av">N</div>
-                                    <div class="nm">Novartis</div>
-                                    <div class="role">Innovative Medicines</div>
-                                </div>
-                                <div class="rd-player">
-                                    <div class="av">J</div>
-                                    <div class="nm">Johnson &amp; Johnson</div>
-                                    <div class="role">Pharma &amp; MedTech</div>
+                                @php
+                                    $playersArray = array_filter(
+                                        array_map('trim', explode(',', $report_details->top_players)),
+                                    );
+                                @endphp
+                                @foreach ($playersArray as $val)
+                                    <div class="rd-player">
+                                        <div class="av">{{ strtoupper(substr($val, 0, 1)) }}</div>
+                                        <div class="nm">{{ $val }}</div>
+                                    </div>
+                                @endforeach
+                                <div class="rd-player more">
+                                    <div class="av">+</div>
+                                    <div class="nm">More companies</div>
                                 </div>
                             </div>
                         </article>
-
                         <article class="rd-section" id="sec-dev">
                             <h2><span class="ico"><i class="fas fa-newspaper"></i></span> Industry Developments</h2>
                             <p class="lead">Recent strategic and regulatory milestones across 2024.</p>
                             <div class="rd-timeline">
 
-                                {{-- industry_developments --}}
-
                                 @if (!empty($report_desc->industry_developments))
                                     <ul class="check-list">
                                         @foreach (json_decode($report_desc->industry_developments) as $key => $value)
                                             <div class="rd-tl-item">
-                                                <div class="q">{{$value->year}}</div>
-                                                <div class="t">{{$value->development}}</div>
+                                                <div class="q">{{ $value->year }}</div>
+                                                <div class="t">{{ $value->development }}</div>
                                             </div>
                                         @endforeach
                                     </ul>
                                 @endif
 
-
-                                {{-- <div class="rd-tl-item">
-                                    <div class="q">Q1 2024</div>
-                                    <div class="t">Regulatory approval for next-generation gene therapy platform</div>
-                                </div> --}}
-                                {{-- <div class="rd-tl-item">
-                                    <div class="q">Q2 2024</div>
-                                    <div class="t">Strategic partnership announced between leading biotech and global
-                                        pharma</div>
-                                </div>
-                                <div class="rd-tl-item">
-                                    <div class="q">Q3 2024</div>
-                                    <div class="t">New product launch — first-in-class oncology biologic</div>
-                                </div>
-                                <div class="rd-tl-item">
-                                    <div class="q">Q4 2024</div>
-                                    <div class="t">Major acquisition reshaping the cell &amp; gene therapy landscape
-                                    </div>
-                                </div> --}}
                             </div>
                         </article>
 
@@ -643,23 +586,26 @@
                             <div class="rd-scope">
                                 <div class="rd-scope-card">
                                     <div class="sc-head"><i class="far fa-calendar"></i> Study Period</div>
-                                    <div class="sc-val">2024 – 2030 (Base Year: 2024)</div>
-                                </div>
+                                    <div class="sc-val">{{ $report_details->base_year }} –
+                                        {{ $report_details->forecast_year }} (Base Year: {{ $report_details->base_year }})
+                                    </div>
+                                </div>  
                                 <div class="rd-scope-card">
                                     <div class="sc-head"><i class="fas fa-globe"></i> Geography</div>
+                                    {{-- <div class="sc-val">{{ $report_desc->regions_covered }}</div> --}}
                                     <div class="sc-val">North America, Europe, Asia Pacific, Latin America, MEA</div>
                                 </div>
                                 <div class="rd-scope-card">
                                     <div class="sc-head"><i class="fas fa-building"></i> Companies Covered</div>
-                                    <div class="sc-val">Pfizer, Roche, Novartis, Johnson &amp; Johnson + 20 more</div>
+                                    <div class="sc-val">{{ $report_details->top_players }} and  more</div>
                                 </div>
                                 <div class="rd-scope-card">
-                                    <div class="sc-head"><i class="fas fa-dollar-sign"></i> Market Size (2024)</div>
-                                    <div class="sc-val">$3.5 Billion</div>
+                                    <div class="sc-head"><i class="fas fa-dollar-sign"></i> Market Size ({{ $report_details->base_year }})</div>
+                                    <div class="sc-val">{{ $report_details->base_year_value }}</div>
                                 </div>
                                 <div class="rd-scope-card">
-                                    <div class="sc-head"><i class="fas fa-chart-line"></i> Forecast (2030)</div>
-                                    <div class="sc-val">$5.8 Billion · CAGR 14.2%</div>
+                                    <div class="sc-head"><i class="fas fa-chart-line"></i> Forecast ({{ $report_details->forecast_year }})</div>
+                                    <div class="sc-val">{{ $report_details->forecast_year_value }} · CAGR {{ $report_details->growth_rate }}</div>
                                 </div>
                                 <div class="rd-scope-card">
                                     <div class="sc-head"><i class="fas fa-database"></i> Data Sources</div>
@@ -668,6 +614,7 @@
                                 </div>
                             </div>
                         </article>
+
 
                         <article class="rd-section" id="sec-faq">
                             <h2><span class="ico"><i class="far fa-circle-question"></i></span> Frequently Asked
@@ -700,6 +647,8 @@
                             </div>
                         </article>
 
+
+
                         <section class="rd-cta-final" aria-label="Get the report">
                             <h2><span class="ico" style="background:rgba(255,255,255,.18);color:#fff"><i
                                         class="fas fa-rocket"></i></span> Ready to Unlock Full Insights?</h2>
@@ -714,7 +663,6 @@
                                     Analyst</a>
                             </div>
                         </section>
-
                     </div>
                 </div>
             </div>
